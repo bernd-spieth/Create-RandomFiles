@@ -217,7 +217,7 @@ function New-RandomFilesInFolders {
         Write-Verbose "Beginning file size of $FileSize"
  
         # Get random folders if we have a value for MaxFolderCount
-        if($null -ne $MaxFolderCount)
+        if($MaxFolderCount)
         {
             $folderPathes = New-RandomFolders -MaxFolderDepth $MaxFolderDepth -RootPath $Path -MaxFolderCount $MaxFolderCount
         }
@@ -236,7 +236,7 @@ function New-RandomFilesInFolders {
             $FullPath = ""
 
             # Pick a random folder from the list of folders if we use folders at all and create it if it does not exist
-            if($null -ne $folderPathes)
+            if($MaxFolderCount)
             {
                 $path = Get-Random -InputObject $folderPathes
                 
@@ -280,4 +280,4 @@ function New-RandomFilesInFolders {
 }
 #endregion functions
 
-New-RandomFilesInFolders -TotalSize 100MB -NumberOfFiles 100 -Path "C:\Temp" -FilesType "Office" -MaxFolderDepth 5 -MaxFolderCount 30
+New-RandomFilesInFolders -TotalSize 100MB -NumberOfFiles 500 -Path "C:\Temp" -FilesType "Office" -MaxFolderDepth 5 -MaxFolderCount 30
