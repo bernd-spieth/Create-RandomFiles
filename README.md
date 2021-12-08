@@ -5,6 +5,8 @@ Creates random files with or without a folder structure. The script is based on 
 
 You can start the function that creates the files and folders with the following call:
 
+`
 New-RandomFilesInFolders -TotalSize 100MB -NumberOfFiles 100 -Path "C:\Temp" -FilesType "Office" -MaxFolderDepth 5 -MaxFolderCount 30
+`
 
-If the MaxFolderCount parameter is not specified then the script will create only the files and not folders.
+If the MaxFolderCount parameter is not specified then the script will create only the files and no folders.
